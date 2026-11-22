@@ -1,0 +1,4 @@
+# Gotowy robots.txt na docelową domenę (wgrać do katalogu głównego domeny).
+User-agent: *
+Allow: /
+Sitemap: https://jerrywillowbusiness.github.io/gracus/sitemap.xml

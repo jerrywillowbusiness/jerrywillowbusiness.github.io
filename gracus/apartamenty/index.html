@@ -20,6 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2714%27 fill=%27%23173326%27/%3E%3Ctext x=%2732%27 y=%2744%27 font-family=%27Georgia,serif%27 font-size=%2738%27 text-anchor=%27middle%27 fill=%27%23c6a15b%27%3EG%3C/text%3E%3C/svg%3E">
 <meta property="og:image" content="https://jerrywillowbusiness.github.io/gracus/apartamenty/img/foto-10.jpg">
 <meta name="theme-color" content="#173326">
+<link rel="preload" as="image" href="../img/apartamenty.webp" type="image/webp">
 <link rel="stylesheet" href="../fonts/fonts.css">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "LodgingBusiness", "@id": "https://jerrywillowbusiness.github.io/gracus/apartamenty/#obiekt", "name": "Apartamenty u Gracusia", "url": "https://jerrywillowbusiness.github.io/gracus/apartamenty/", "description": "Dwa nowoczesne apartamenty z antresolą w Oświęcimiu dla maksymalnie 4 osób. Bezpłatny prywatny parking, Wi-Fi i aneks kuchenny. Blisko centrum, Muzeum Auschwitz-Birkenau i Energylandii w Zatorze.", "image": ["https://jerrywillowbusiness.github.io/gracus/apartamenty/img/foto-10.jpg", "https://jerrywillowbusiness.github.io/gracus/apartamenty/img/foto-22.jpg", "https://jerrywillowbusiness.github.io/gracus/apartamenty/img/foto-25.jpg", "https://jerrywillowbusiness.github.io/gracus/apartamenty/img/foto-03.jpg"], "address": {"@type": "PostalAddress", "streetAddress": "Jana Kilińskiego 4b", "postalCode": "32-600", "addressLocality": "Oświęcim", "addressRegion": "małopolskie", "addressCountry": "PL"}, "email": "apartamentyugracusia@interia.pl", "checkinTime": "16:00", "checkoutTime": "10:00", "petsAllowed": false, "numberOfRooms": 2, "availableLanguage": ["pl", "en"], "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Bezpłatny parking", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Bezpłatne Wi-Fi", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Aneks kuchenny", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Pralka", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Zmywarka", "value": true}, {"@type": "LocationFeatureSpecification", "name": "Telewizor", "value": true}], "containsPlace": [{"@type": "Accommodation", "name": "Apartament Oliwkowy", "occupancy": {"@type": "QuantitativeValue", "maxValue": 4}, "numberOfRooms": 1}, {"@type": "Accommodation", "name": "Apartament Szafirowy", "occupancy": {"@type": "QuantitativeValue", "maxValue": 4}, "numberOfRooms": 1}], "sameAs": ["https://www.instagram.com/ugracusia", "https://www.facebook.com/profile.php?id=61591671236563", "https://www.booking.com/hotel/pl/apartamenty-u-gracusia.pl.html"]}
@@ -40,10 +41,12 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-heigh
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(1200px,100% - 32px);margin-inline:auto}
-.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);font-weight:700}
+.eyebrow{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:#7F6128;font-weight:700}
+.loc .eyebrow,.cta .eyebrow,.hero .eyebrow{color:var(--brass)}
 h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;letter-spacing:-.01em}
 h2{font-size:clamp(2rem,4.5vw,3.3rem)}
-h2 em,h1 em{font-style:italic;color:var(--brass)}
+h2 em,h1 em{font-style:italic;color:#8F6D2E}
+.hero h1 em,.loc h2 em,.cta h2 em{color:var(--brass)}
 .lead{color:var(--muted);font-size:1.08rem;max-width:60ch}
 section{padding:clamp(70px,10vw,120px) 0}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:15px 26px;border-radius:999px;font-weight:700;font-size:.98rem;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
@@ -82,7 +85,7 @@ section{padding:clamp(70px,10vw,120px) 0}
 
 /* HERO */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:120px 0 60px;overflow:hidden;isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg{position:absolute;inset:0;z-index:-2}.hero-bg picture{display:block;width:100%;height:100%}
 .hero-bg img{width:100%;height:100%;object-fit:cover;animation:kb 22s ease-in-out infinite alternate}
 @keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14) translateY(-2%)}}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,20,15,.55) 0%,rgba(10,20,15,.15) 35%,rgba(10,20,15,.85) 100%)}
@@ -95,7 +98,7 @@ section{padding:clamp(70px,10vw,120px) 0}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
 
 .book-card{background:rgba(251,249,245,.97);color:var(--ink);border-radius:var(--radius);padding:26px;box-shadow:0 30px 70px -20px rgba(0,0,0,.5)}
-.book-card h3{font-size:1.5rem;margin-bottom:4px}
+.book-card h3,.book-card .book-title{font-size:1.5rem;margin-bottom:4px}
 .book-card .hint{font-size:.85rem;color:var(--muted);margin-bottom:18px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
 .field{display:flex;flex-direction:column;gap:4px;border:1px solid var(--line);border-radius:14px;padding:9px 13px;background:#fff}
@@ -229,7 +232,7 @@ details p{padding:0 22px 20px;color:var(--muted)}
 
 footer{background:#0f1f17;color:rgba(255,255,255,.7);padding:60px 0 100px;font-size:.92rem}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px}
-footer h4{color:#fff;font-family:var(--serif);font-weight:400;font-size:1.3rem;margin-bottom:14px}
+footer .fh{color:#fff;font-family:var(--serif);font-weight:400;font-size:1.3rem;margin-bottom:14px}
 footer a:hover{color:var(--brass-2)}
 footer li{list-style:none;margin-bottom:8px}
 .social{display:flex;gap:10px;margin-top:16px}
@@ -265,6 +268,11 @@ footer li{list-style:none;margin-bottom:8px}
 .foot-grid{grid-template-columns:1fr}
 .mbar{display:flex}
 .map,.map iframe{min-height:340px}
+.map-consent{position:relative;display:grid;place-items:center;background:var(--green)}
+.map-consent>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28}
+.map-cta{position:relative;display:grid;gap:12px;justify-items:center;text-align:center;color:#fff;padding:28px;max-width:360px}
+.map-cta small{color:rgba(255,255,255,.8);font-size:.85rem;line-height:1.45}
+.map-cta a{color:var(--brass-2);text-decoration:underline;font-weight:600;font-size:.95rem}
 .score .big{font-size:4.2rem}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
@@ -291,7 +299,7 @@ footer li{list-style:none;margin-bottom:8px}
 
 <!-- HERO -->
 <section class="hero" id="top">
-<div class="hero-bg"><img src="img/foto-10.jpg" alt="Apartament w Oświęcimiu – salon z antresolą i mosiężnymi lampami, Apartamenty u Gracusia" fetchpriority="high"></div>
+<div class="hero-bg"><picture><source srcset="../img/apartamenty.webp" type="image/webp"><img src="img/foto-10.jpg" width="1200" height="900" alt="Apartament w Oświęcimiu – salon z antresolą i mosiężnymi lampami, Apartamenty u Gracusia" fetchpriority="high"></picture></div>
 <div class="wrap hero-grid">
 <div class="rv">
 <a href="#opinie" class="rating-pill"><b>8,9</b> <span data-en="Fantastic · 17 guest reviews on Booking.com">Fantastyczny · 17 opinii gości na Booking.com</span></a>
@@ -304,7 +312,7 @@ footer li{list-style:none;margin-bottom:8px}
 </div>
 
 <form class="book-card rv" id="rezerwacja" onsubmit="return false">
-<h3 data-en="Check availability">Sprawdź dostępność</h3>
+<h2 class="book-title" data-en="Check availability">Sprawdź dostępność</h2>
 <p class="hint" data-en="Pick your dates – we'll show live prices on Booking.com.">Wybierz termin – pokażemy aktualne ceny na Booking.com.</p>
 <div class="field-row">
 <div class="field"><label for="cin" data-en="Check-in">Przyjazd</label><input type="date" id="cin" required></div>
@@ -428,9 +436,14 @@ footer li{list-style:none;margin-bottom:8px}
 <li><span data-en="Katowice-Pyrzowice Airport">Lotnisko Katowice-Pyrzowice</span><b>59 km</b></li>
 </ul>
 </div>
-<div class="map rv">
-<iframe title="Mapa – Apartamenty u Gracusia" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-src="https://maps.google.com/maps?q=Jana%20Kili%C5%84skiego%204b%2C%2032-600%20O%C5%9Bwi%C4%99cim&z=15&output=embed"></iframe>
+<div class="map map-consent rv" id="mapBox" data-src="https://maps.google.com/maps?q=Jana%20Kili%C5%84skiego%204b%2C%2032-600%20O%C5%9Bwi%C4%99cim&z=15&output=embed">
+<img src="img/foto-15.jpg" alt="" loading="lazy">
+<div class="map-cta">
+<b>Jana Kilińskiego 4b, 32-600 Oświęcim</b>
+<button type="button" id="mapLoad" class="btn btn-brass" data-en="Show map">Pokaż mapę</button>
+<small data-en="The map is provided by Google, which may set cookies after it loads.">Mapę wyświetla Google, które po jej załadowaniu może zapisać pliki cookies.</small>
+<a href="https://www.google.com/maps/search/?api=1&query=Jana+Kili%C5%84skiego+4b+32-600+O%C5%9Bwi%C4%99cim" target="_blank" rel="noopener" data-en="Open in Google Maps">Otwórz w Mapach Google</a>
+</div>
 </div>
 </div>
 </section>
@@ -529,7 +542,7 @@ src="https://maps.google.com/maps?q=Jana%20Kili%C5%84skiego%204b%2C%2032-600%20O
 <div class="wrap">
 <div class="foot-grid">
 <div>
-<h4>Apartamenty u Gracusia</h4>
+<h3 class="fh">Apartamenty u Gracusia</h3>
 <p data-en="Comfortable apartments in Oświęcim. Calm • Comfort • Great location.">Komfortowe apartamenty w Oświęcimiu. Spokój • Wygoda • Świetna lokalizacja.</p>
 <div class="social">
 <a href="https://www.instagram.com/ugracusia" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
@@ -537,14 +550,14 @@ src="https://maps.google.com/maps?q=Jana%20Kili%C5%84skiego%204b%2C%2032-600%20O
 </div>
 </div>
 <div>
-<h4 data-en="Contact">Kontakt</h4>
+<h3 class="fh" data-en="Contact">Kontakt</h3>
 <ul>
 <li>Jana Kilińskiego 4b, 1 p.<br>32-600 Oświęcim</li>
 <li><a href="mailto:apartamentyugracusia@interia.pl">apartamentyugracusia@interia.pl</a></li>
 </ul>
 </div>
 <div>
-<h4 data-en="Book">Rezerwacja</h4>
+<h3 class="fh" data-en="Book">Rezerwacja</h3>
 <ul>
 <li><a href="https://www.booking.com/hotel/pl/apartamenty-u-gracusia.pl.html" target="_blank" rel="noopener">Booking.com</a></li>
 <li><a href="#rezerwacja" data-en="Check availability">Sprawdź dostępność</a></li>
@@ -552,12 +565,13 @@ src="https://maps.google.com/maps?q=Jana%20Kili%C5%84skiego%204b%2C%2032-600%20O
 </ul>
 </div>
 <div>
-<h4 data-en="Gracuś businesses">Firmy Gracusia</h4>
+<h3 class="fh" data-en="Gracuś businesses">Firmy Gracusia</h3>
 <ul>
 <li><a href="../" data-en="All businesses">Wszystkie firmy</a></li>
 <li><a href="../wynajem/" data-en="Car rental">Bryki od Gracusia – wynajem aut</a></li>
 <li><a href="../antykorozja/">Antykorozja Paweł Graca</a></li>
 <li><a href="../polityka-prywatnosci.html" data-en="Privacy policy">Polityka prywatności</a></li>
+<li><a href="../regulamin.html" data-en="Terms of use">Regulamin strony</a></li>
 </ul>
 </div>
 </div>
@@ -675,6 +689,7 @@ const nav=document.getElementById('nav'),mbar=document.getElementById('mbar'),bo
 addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>40);const r=bookCard.getBoundingClientRect();mbar.classList.toggle('show',r.bottom<0||r.top>innerHeight)},{passive:true});
 bookUrl();
 document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('mapLoad').onclick=()=>{const box=document.getElementById('mapBox');box.innerHTML=`<iframe title="Mapa – Apartamenty u Gracusia" referrerpolicy="no-referrer-when-downgrade" src="${box.dataset.src}"></iframe>`;box.classList.remove('map-consent')};
 </script>
 </body>
 </html>
