@@ -28,8 +28,6 @@
   --oxide:#9A3A1E; --oxide-dark:#7C2D16;
   --ink:#141B21; --muted:#4F5A63;
   --f:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .45 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  --rust:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.05' numOctaves='6' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .52 0 0 0 0 .24 0 0 0 0 .10 2.6 0 0 0 -.95'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23r)'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -60,18 +58,6 @@ h1,h2,h3{font-stretch:125%;font-weight:800;letter-spacing:-.015em;margin:0}
 .btn-oxide:hover{background:var(--oxide-dark)}
 .btn-out{border-color:#fff;color:#fff}
 .btn-out:hover{background:#fff;color:var(--slate)}
-
-/* the one bold element: surface cross-section, a real sequence */
-.layers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;padding:0;list-style:none}
-.layers li{position:relative;min-height:clamp(220px,28vw,340px);display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem clamp(1rem,2vw,1.6rem)}
-.layers .s1{background:var(--noise),var(--rust),var(--rust),#4E5357;color:#fff}
-.layers .s2{background:var(--noise),#B9BFC4;color:var(--ink)}
-.layers .s3{background:var(--noise),var(--oxide);color:#fff}
-.layers .s4{background:linear-gradient(115deg,rgba(255,255,255,.14),rgba(255,255,255,0) 45%),#34505F;color:#fff}
-.layers .n{font-stretch:125%;font-weight:800;font-size:clamp(2rem,3.4vw,3rem);line-height:1;margin-bottom:.4rem}
-.layers strong{display:block;font-stretch:112%;font-size:1.1rem;line-height:1.2}
-.layers span.d{display:block;font-size:.92rem;opacity:.88;margin-top:.3rem;max-width:20em}
-.layers .s1 .d,.layers .s1 strong,.layers .s1 .n{text-shadow:0 1px 6px rgba(0,0,0,.55)}
 
 section{padding:clamp(4.5rem,9vw,7rem) 0}
 .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2rem;align-items:end;margin-bottom:clamp(2.5rem,5vw,3.5rem)}
@@ -127,8 +113,6 @@ footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underlin
   .top nav a:not(.tel){display:none}
   .hero-body,.head,.spec li,.clients .wrap,.contact .wrap{grid-template-columns:1fr}
   .spec li{gap:.5rem}
-  .layers{grid-template-columns:1fr 1fr}
-  .layers li{min-height:200px}
   .steps{grid-template-columns:1fr 1fr}
   footer .wrap{grid-template-columns:1fr}
   .callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;inset:auto 0 0;z-index:20;box-shadow:0 -4px 16px rgba(0,0,0,.2)}
@@ -136,7 +120,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underlin
   .callbar a:first-child{background:var(--oxide);color:#fff}
   .callbar a:last-child{background:var(--slate);color:#fff}
 }
-@media (max-width:520px){.steps{grid-template-columns:1fr}.top nav .tel{font-size:.9rem;padding:.45rem .7rem}.logo{font-size:.95rem}.hero h1{font-size:2rem;font-stretch:112%}.layers li{padding:1rem}.layers strong{font-size:1rem}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.top nav .tel{font-size:.9rem;padding:.45rem .7rem}.logo{font-size:.95rem}.hero h1{font-size:2rem;font-stretch:112%}}
 </style>
 </head>
 <body>
@@ -164,12 +148,6 @@ footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underlin
       </div>
     </div>
   </div>
-  <ol class="layers" aria-label="Etapy zabezpieczenia stali">
-    <li class="s1"><span class="n">1</span><strong>Skorodowana stal</strong><span class="d">Rdza, łuszcząca się stara farba i zgorzelina.</span></li>
-    <li class="s2"><span class="n">2</span><strong>Po piaskowaniu</strong><span class="d">Czysty, szorstki metal gotowy na powłokę.</span></li>
-    <li class="s3"><span class="n">3</span><strong>Podkład antykorozyjny</strong><span class="d">Pierwsza warstwa, która chroni stal przed korozją.</span></li>
-    <li class="s4"><span class="n">4</span><strong>Powłoka nawierzchniowa</strong><span class="d">Wykończenie odporne na warunki atmosferyczne.</span></li>
-  </ol>
 </header>
 
 <main>
