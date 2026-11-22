@@ -127,11 +127,30 @@ h2{font-weight:800;font-stretch:80%;font-size:clamp(2.4rem,5.5vw,4rem);line-heig
 .jobs p{color:var(--stone);margin-top:.3rem}
 .photo-ask{margin-top:1.6rem;background:var(--tile);padding:1.2rem 1.3rem;border-left:4px solid var(--laser)}
 
+
+/* metrówka */
+.tape-wrap{position:fixed;top:0;right:34px;width:44px;height:100vh;z-index:20;pointer-events:none;--p:0}
+.tape{position:absolute;top:0;left:5px;width:34px;height:calc(var(--p) * (100vh - 96px) + 14px);overflow:hidden;
+  background:
+   repeating-linear-gradient(to bottom,transparent 0 39px,var(--ink) 39px 40px) left/14px 100% no-repeat,
+   repeating-linear-gradient(to bottom,transparent 0 19px,var(--ink) 19px 20px) left/9px 100% no-repeat,
+   repeating-linear-gradient(to bottom,transparent 0 3px,rgba(30,41,50,.55) 3px 4px) left/5px 100% no-repeat,
+   #F2C230;
+  box-shadow:inset -3px 0 0 rgba(0,0,0,.10),2px 0 6px rgba(0,0,0,.15)}
+.tape span{position:absolute;left:12px;font:700 10.5px/1 "Archivo",sans-serif;font-stretch:80%;color:var(--ink);transform:translateY(-4px)}
+.tape span.red{color:var(--laser)}
+.hook{position:absolute;top:0;left:3px;width:38px;height:7px;background:#9AA3A8;border-radius:0 0 2px 2px;box-shadow:inset 0 -2px 0 rgba(0,0,0,.2)}
+.case{position:absolute;left:-12px;top:calc(var(--p) * (100vh - 96px) + 6px);width:68px;height:76px;border-radius:14px 14px 18px 18px;background:var(--ink);box-shadow:0 6px 14px rgba(0,0,0,.25),inset 0 0 0 4px #2E3B45}
+.case::before{content:"";position:absolute;left:16px;top:14px;width:36px;height:36px;border-radius:50%;background:#2E3B45;box-shadow:inset 0 0 0 4px #F2C230}
+.case::after{content:"";position:absolute;right:8px;bottom:10px;width:14px;height:8px;border-radius:3px;background:var(--laser)}
+@media (max-width:1300px),(pointer:coarse){.tape-wrap{display:none}}
+
 footer{padding:2rem 0;color:var(--stone);font-size:.9rem}
 footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 </style>
 </head>
 <body>
+<div class="tape-wrap" aria-hidden="true"><div class="tape" id="tape"></div><div class="hook"></div><div class="case"></div></div>
 <header class="hero">
     <div class="wrap">
     <div class="bar">
@@ -142,8 +161,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <h1>Płytki w&nbsp;poziomie,<br>co&nbsp;do milimetra.</h1>
       <div class="hero-foot">
         <p>Glazurnik z Kęt. Łazienki, płytki, schody zewnętrzne i tarasy. Pracuję w Kętach, Bielsku-Białej, Oświęcimiu i okolicach.</p>
-        <div>
-          <div class="level" role="img" aria-label="Poziomica z wypoziomowanym pęcherzykiem"><div class="vial"><div class="bubble"></div></div></div>
         </div>
       </div>
     </div>
@@ -242,6 +259,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <footer><div class="wrap"><span>Równa Chata, usługi glazurnicze, Kęty</span><span>Projekt poglądowy przygotowany przez Jerry Willow. Zdjęcia realizacji dodamy po akceptacji.</span></div></footer>
 <script>
 try{const ba=document.getElementById('ba'),r=ba.querySelector('input');const set=()=>ba.style.setProperty('--pos',r.value+'%');r.addEventListener('input',set);set();}catch(e){}
+</script>
+<script>
+try{const w=document.querySelector('.tape-wrap'),t=document.getElementById('tape');
+for(let i=1;i<=60;i++){const e=document.createElement('span');e.textContent=i*5;e.style.top=(i*40)+'px';if(i%2==0)e.className='red';t.appendChild(e)}
+let q=false;const up=()=>{const h=document.documentElement.scrollHeight-innerHeight;w.style.setProperty('--p',h>0?Math.min(1,scrollY/h):0);q=false};
+addEventListener('scroll',()=>{if(!q){q=true;requestAnimationFrame(up)}},{passive:true});addEventListener('resize',up);up();}catch(e){}
 </script>
 </body>
 </html>
