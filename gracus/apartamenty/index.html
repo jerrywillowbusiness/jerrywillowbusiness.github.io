@@ -61,6 +61,12 @@ section{padding:clamp(70px,10vw,120px) 0}
 .logo{font-family:var(--serif);font-size:1.45rem;color:#fff;display:flex;align-items:baseline;gap:.35em;transition:color .3s}
 .logo small{font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75}
 .nav.scrolled .logo{color:var(--green)}
+.brand{display:flex;align-items:center;gap:1rem}
+.home{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:#fff;border:1.5px solid rgba(255,255,255,.55);padding:.38rem .8rem;border-radius:999px;transition:color .3s,border-color .3s,background .3s}
+.home:hover{background:rgba(255,255,255,.15)}
+.nav.scrolled .home{color:var(--green);border-color:var(--line)}
+.nav.scrolled .home:hover{background:var(--sand)}
+@media (max-width:620px){.home span{display:none}.home{padding:.42rem}.brand{gap:.6rem}}
 .nav-links{display:flex;gap:28px;align-items:center}
 .nav-links a{color:rgba(255,255,255,.9);font-weight:600;font-size:.93rem;transition:color .3s}
 .nav.scrolled .nav-links a{color:var(--ink)}
@@ -269,7 +275,7 @@ footer li{list-style:none;margin-bottom:8px}
 <!-- NAV -->
 <header class="nav" id="nav">
 <div class="wrap">
-<a href="#top" class="logo">u Gracusia <small>Oświęcim</small></a>
+<div class="brand"><a class="home" href="../" aria-label="Wróć do strony Firmy Gracusia"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span data-en="All businesses">Firmy Gracusia</span></a><a href="#top" class="logo">u Gracusia <small>Oświęcim</small></a></div>
 <nav class="nav-links">
 <a href="#apartamenty" data-en="Apartments">Apartamenty</a>
 <a href="#galeria" data-en="Gallery">Galeria</a>

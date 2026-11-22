@@ -44,6 +44,9 @@ h1,h2,h3{font-stretch:125%;font-weight:800;letter-spacing:-.015em;margin:0}
 .top{display:flex;justify-content:space-between;align-items:center;height:80px}
 .logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-weight:700;font-stretch:115%;font-size:1.05rem;letter-spacing:.01em}
 .logo i{width:22px;height:22px;background:var(--oxide);display:block;box-shadow:6px 6px 0 var(--zinc)}
+.brand{display:flex;align-items:center;gap:1.1rem}
+.home{display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;font-weight:600;font-size:.88rem;color:#D3D8DC;border:1.5px solid #5A6670;padding:.4rem .7rem}
+.home:hover{border-color:#fff;color:#fff}
 .top nav{display:flex;gap:1.8rem;align-items:center}
 .top nav a{text-decoration:none;font-size:.97rem;color:#D3D8DC}
 .top nav a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
@@ -120,7 +123,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underlin
   .callbar a:first-child{background:var(--oxide);color:#fff}
   .callbar a:last-child{background:var(--slate);color:#fff}
 }
-@media (max-width:520px){.steps{grid-template-columns:1fr}.top nav .tel{font-size:.9rem;padding:.45rem .7rem}.logo{font-size:.95rem}.hero h1{font-size:2rem;font-stretch:112%}}
+@media (max-width:520px){.home span{display:none}.home{padding:.45rem}.brand{gap:.7rem}.steps{grid-template-columns:1fr}.top nav .tel{font-size:.9rem;padding:.45rem .7rem}.logo{font-size:.95rem}.hero h1{font-size:2rem;font-stretch:112%}}
 </style>
 </head>
 <body>
@@ -129,7 +132,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff;text-decoration:underlin
 <header class="hero">
   <div class="wrap">
     <div class="top">
-      <a class="logo" href="./"><i aria-hidden="true"></i>Antykorozja Paweł Graca</a>
+      <div class="brand"><a class="home" href="../" aria-label="Wróć do strony Firmy Gracusia"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span>Firmy Gracusia</span></a><a class="logo" href="./"><i aria-hidden="true"></i>Antykorozja Paweł Graca</a></div>
       <nav aria-label="Główna nawigacja">
         <a href="#zakres">Zakres prac</a>
         <a href="#przebieg">Przebieg zlecenia</a>
