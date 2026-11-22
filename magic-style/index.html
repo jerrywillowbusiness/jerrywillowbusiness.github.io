@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Magic Style, salon fryzjerski w Strzelcach Opolskich | koloryzacja i blond</title>
-<meta name="description" content="Salon fryzjerski Magic Style przy Krakowskiej w Strzelcach Opolskich. Koloryzacja, rozjaśnianie i blond, keratynowe prostowanie, regeneracja włosów. Zarezerwuj wizytę.">
+<title>Magic Style, salon fryzjerski Strzelce Opolskie | blond, rozjaśnianie, koloryzacja</title>
+<meta name="description" content="Magic Style przy Krakowskiej w Strzelcach Opolskich. Rozjaśnianie i blondy, koloryzacja, keratynowe prostowanie, regeneracja włosów. Rezerwacje przez Facebooka i pod numerem 575 405 169.">
 <meta name="robots" content="noindex, nofollow">
-<meta property="og:title" content="Magic Style, salon fryzjerski w Strzelcach Opolskich">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4 56 18v28L32 60 8 46V18z' fill='none' stroke='%232E2420' stroke-width='4'/%3E%3Cpath d='M20 42V22l12 14 12-14v20' fill='none' stroke='%23B8894E' stroke-width='4'/%3E%3C/svg%3E">
+<meta property="og:image" content="img/po.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 4 56 18v28L32 60 8 46V18z' fill='%23fff' stroke='%2323201E' stroke-width='4'/%3E%3Cpath d='M20 42V22l12 14 12-14v20' fill='none' stroke='%2323201E' stroke-width='4'/%3E%3C/svg%3E">
 <style>
 @font-face {
   font-family:'Bodoni Moda';
@@ -59,172 +59,149 @@
 }
 
 :root{
-  --platinum:#EFEAE2;
-  --ash:#C9BFAE;
-  --honey:#B8894E;
-  --espresso:#2E2420;
-  --slate:#4A545B;
-  --paper:#F8F6F2;
+  --char:#23201E;
+  --paper:#FAF8F5;
+  --brick:#9C4A33;
+  --blond:#D9C3A0;
+  --stone:#6E6760;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-body{background:var(--paper);color:var(--espresso);font:400 1.0625rem/1.7 "Jost",system-ui,sans-serif}
+body{background:var(--paper);color:var(--char);font:400 1.0625rem/1.7 "Jost",system-ui,sans-serif}
 a{color:inherit}
-:focus-visible{outline:2px solid var(--honey);outline-offset:4px}
-.wrap{width:min(1180px,100% - 2.5rem);margin-inline:auto}
+:focus-visible{outline:2px solid var(--brick);outline-offset:4px}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.wrap{width:min(1200px,100% - 2.5rem);margin-inline:auto}
+.serif{font-family:"Bodoni Moda",Georgia,serif;font-weight:400}
 
-.top{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0}
-.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none;font-family:"Bodoni Moda",serif;font-size:1.6rem;letter-spacing:.12em}
-.brand svg{width:38px;height:38px}
-@media (max-width:480px){.book-sm{display:none}}
-.book-sm{text-decoration:none;font-weight:500;border-bottom:1px solid currentColor;padding-bottom:2px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-family:"Bodoni Moda",Georgia,serif;font-size:1.35rem;letter-spacing:.06em}
+.brand svg{width:34px;height:34px}
+.book{text-decoration:none;font-weight:500;background:var(--char);color:var(--paper);padding:.6rem 1.1rem}
 
-/* hero */
-.hero{display:grid;grid-template-columns:1fr 1.05fr;gap:3rem;align-items:center;min-height:min(78vh,760px);padding:2rem 0 4rem}
-@media (max-width:860px){.hero{grid-template-columns:1fr;min-height:auto}}
-.hero h1{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(3rem,7vw,5.8rem);line-height:1;letter-spacing:-.005em}
-.hero p{margin-top:1.6rem;font-size:1.2rem;max-width:34ch;color:var(--slate)}
-.hero .cta{margin-top:2.2rem;display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
-.btn{display:inline-block;background:var(--espresso);color:var(--paper);text-decoration:none;font-weight:400;padding:1rem 1.8rem;letter-spacing:.04em}
-.btn:hover{background:#4a3a33}
-.tel{text-decoration:none;font-weight:400}
+/* hero: before / after */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:center;padding:1rem 0 5rem}
+@media (max-width:860px){.hero{grid-template-columns:1fr;padding-bottom:3.5rem}}
+.ba{position:relative;aspect-ratio:3/4;max-height:82vh;overflow:hidden;--pos:50%;user-select:none;background:#ddd}
+.ba img{position:absolute;inset:0}
+.ba .after{clip-path:inset(0 0 0 var(--pos))}
+.ba .line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;margin-left:-1px;background:#fff;pointer-events:none}
+.ba .knob{position:absolute;top:50%;left:var(--pos);width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.25);pointer-events:none;display:grid;place-items:center;font-size:.8rem;letter-spacing:.05em}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba input:focus-visible ~ .knob{outline:2px solid var(--brick);outline-offset:3px}
+.ba .tag{position:absolute;top:14px;background:rgba(35,32,30,.75);color:#fff;font-size:.82rem;letter-spacing:.08em;padding:.25rem .6rem;pointer-events:none}
+.ba .tag.l{left:14px}.ba .tag.r{right:14px}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.6rem);line-height:1.02;letter-spacing:-.01em}
+.hero p{margin-top:1.4rem;font-size:1.2rem;color:var(--stone);max-width:34ch}
+.hero .row{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem;margin-top:2rem}
+.hero .tel{text-decoration:none;font-size:1.1rem;border-bottom:1px solid var(--char)}
+.hint{margin-top:.8rem;font-size:.9rem;color:var(--stone)}
 
-/* swatch fan */
-.fan{position:relative;height:clamp(360px,52vw,600px)}
-.strand{position:absolute;left:50%;bottom:6%;width:clamp(34px,4.4vw,52px);height:86%;transform-origin:50% 100%;border-radius:26px 26px 6px 6px;
-  background:linear-gradient(180deg,var(--root) 0%,var(--c) 22%,var(--c) 78%,var(--tip) 100%);
-  box-shadow:0 1px 0 rgba(0,0,0,.05);
-  transform:translateX(-50%) rotate(var(--r));
-  animation:fan 1.1s cubic-bezier(.2,.75,.2,1) both;animation-delay:.15s}
-.strand::after{content:"";position:absolute;inset:6% 22% 4%;background:repeating-linear-gradient(90deg,rgba(255,255,255,.18) 0 1px,transparent 1px 4px);border-radius:inherit}
-@keyframes fan{from{transform:translateX(-50%) rotate(0deg)}}
-.pin{position:absolute;left:50%;bottom:3%;width:26px;height:26px;transform:translateX(-50%);border-radius:50%;background:var(--espresso);box-shadow:0 0 0 5px var(--paper)}
-.fan-caption{position:absolute;right:0;bottom:0;font-size:.85rem;color:var(--slate);text-align:right}
+/* blond pair */
+.blond{background:var(--char);color:var(--paper);padding:clamp(4rem,8vw,6.5rem) 0}
+.blond .wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(1rem,2.5vw,2rem);align-items:end}
+@media (max-width:860px){.blond .wrap{grid-template-columns:1fr 1fr}.blond .txt{grid-column:span 2}}
+.blond .txt h2{font-size:clamp(2.2rem,4.4vw,3.4rem);line-height:1.05}
+.blond .txt p{margin-top:1.1rem;color:#CFC8BF;max-width:30ch}
+.blond figure{aspect-ratio:3/4}
+.blond figcaption{margin-top:.6rem;font-size:.9rem;color:#A9A198}
 
-/* services */
-section{padding:6rem 0}
-.split{display:grid;grid-template-columns:1fr 2fr;gap:3rem}
-@media (max-width:860px){.split{grid-template-columns:1fr}}
-h2{font-family:"Bodoni Moda",serif;font-weight:400;font-size:clamp(2.2rem,4vw,3.2rem);line-height:1.05}
-.services{list-style:none}
-.services li{display:grid;grid-template-columns:1fr 1.4fr;gap:1.5rem;padding:1.4rem 0;border-top:1px solid var(--ash)}
-.services li:last-child{border-bottom:1px solid var(--ash)}
-.services h3{font-weight:400;font-size:1.3rem}
-.services p{color:var(--slate)}
-@media (max-width:600px){.services li{grid-template-columns:1fr;gap:.3rem}}
-.note{margin-top:1.4rem;color:var(--slate);font-size:.95rem}
+/* services + quote */
+.svc{padding:clamp(4rem,8vw,6rem) 0}
+.svc .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem)}
+@media (max-width:860px){.svc .wrap{grid-template-columns:1fr}}
+.svc h2{font-size:clamp(2rem,3.8vw,2.8rem);line-height:1.1;margin-bottom:1.4rem}
+.svc ul{list-style:none;font-size:1.2rem;line-height:2.1}
+.svc ul li{border-bottom:1px solid #E5DFD7}
+.svc .note{margin-top:1.2rem;color:var(--stone);font-size:.98rem}
+blockquote{align-self:center}
+blockquote p{font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.25}
+blockquote footer{margin-top:1rem;color:var(--stone)}
+.stars{margin-top:2rem;font-size:.98rem;color:var(--stone)}
+.stars b{color:var(--char);font-weight:500}
 
-/* story */
-.story{background:var(--platinum)}
-.story .split{align-items:center}
-blockquote p{font-family:"Bodoni Moda",serif;font-size:clamp(1.6rem,3.2vw,2.5rem);line-height:1.25}
-blockquote footer{margin-top:1.2rem;color:var(--slate)}
-.hex{width:100%;max-width:300px;aspect-ratio:1/1.08;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
-  background:var(--espresso);color:var(--platinum);display:grid;place-content:center;text-align:center;padding:2rem}
-.hex b{font-family:"Bodoni Moda",serif;font-weight:400;font-size:4rem;line-height:1;color:#E5CDA3}
-.hex span{font-size:.95rem;margin-top:.4rem}
+.visit{border-top:1px solid #E5DFD7;padding:3.5rem 0 4rem}
+.visit .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2rem;align-items:end}
+.visit .addr{font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.15}
+.visit .links{display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center}
+.visit .links a{text-decoration:none;border-bottom:1px solid var(--char)}
 
-/* visit */
-.visit{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2.5rem}
-@media (max-width:860px){.visit{grid-template-columns:1fr}}
-.visit h3{font-weight:500;font-size:1rem;margin-bottom:.5rem;color:var(--slate)}
-.visit p{font-size:1.2rem}
-.visit a{text-decoration:none;border-bottom:1px solid var(--ash)}
-.final{margin-top:4rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;padding-top:3rem;border-top:1px solid var(--ash)}
-.final p{font-family:"Bodoni Moda",serif;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.1;max-width:22ch}
-
-footer{padding:2.5rem 0;font-size:.9rem;color:var(--slate)}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer.site{background:var(--char);color:#A9A198;font-size:.9rem;padding:1.8rem 0}
+footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="brand" href="#" aria-label="Magic Style, strona główna">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 56 18v28L32 60 8 46V18z" fill="none" stroke="#2E2420" stroke-width="2.5"/><path d="M21 42V22l11 13 11-13v20" fill="none" stroke="#B8894E" stroke-width="2.5"/></svg>
-      Magic Style
-    </a>
-    <a class="book-sm" href="https://www.facebook.com/magicstylestrzelceop">Zarezerwuj wizytę</a>
+    <a class="brand" href="#"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 56 18v28L32 60 8 46V18z" fill="none" stroke="#23201E" stroke-width="2.5"/><path d="M21 42V22l11 13 11-13v20" fill="none" stroke="#23201E" stroke-width="2.5"/></svg>Magic Style</a>
+    <a class="book" href="https://www.facebook.com/magicstylestrzelceop">Zarezerwuj wizytę</a>
   </header>
+
+  <section class="hero" aria-labelledby="h">
+    <div>
+      <div class="ba" id="ba">
+        <img src="img/przed.jpg" alt="Przed: rozjaśnione włosy z odrostem i nierównym kolorem" draggable="false">
+        <img class="after" src="img/po.jpg" alt="Po: równy, chłodny blond do ramion" draggable="false">
+        <span class="tag l">PRZED</span><span class="tag r">PO</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Przesuń, aby porównać przed i po">
+        <span class="line"></span><span class="knob" aria-hidden="true">⇆</span>
+      </div>
+      <p class="hint">Przesuń suwak. Ta sama klientka przed i po wizycie w salonie.</p>
+    </div>
+    <div>
+      <h1 id="h" class="serif">Od odrostu do chłodnego blondu</h1>
+      <p>Salon fryzjerski przy Krakowskiej w Strzelcach Opolskich. Blondy, koloryzacja i odbudowa włosów zniszczonych wcześniejszymi farbami.</p>
+      <div class="row"><a class="book" href="https://www.facebook.com/magicstylestrzelceop">Zarezerwuj wizytę</a><a class="tel" href="tel:+48575405169">575 405 169</a></div>
+    </div>
+  </section>
 </div>
 
 <main>
-  <div class="wrap">
-    <section class="hero" aria-labelledby="h" style="padding-top:2rem">
-      <div>
-        <h1 id="h">Kolor, który wygląda naturalnie. Włosy, które zostają zdrowe.</h1>
-        <p>Salon fryzjerski przy Krakowskiej w Strzelcach Opolskich. Specjalizujemy się w blondach, koloryzacji i odbudowie zniszczonych włosów.</p>
-        <div class="cta">
-          <a class="btn" href="https://www.facebook.com/magicstylestrzelceop">Zarezerwuj wizytę</a>
-          <a class="tel" href="tel:+48575405169">lub zadzwoń: 575 405 169</a>
-        </div>
+  <section class="blond" aria-labelledby="b-h">
+    <div class="wrap">
+      <div class="txt">
+        <h2 id="b-h" class="serif">Każdy blond jest inny</h2>
+        <p>Ciepły miodowy, chłodna platyna, delikatne pasemka. Odcień dobieramy do karnacji i do tego, w jakim stanie są włosy.</p>
       </div>
-      <div class="fan" role="img" aria-label="Wachlarz pasm włosów w odcieniach od platyny po miodowy blond i brąz">
-        <div class="strand" style="--r:-42deg;--root:#6B5444;--c:#8A6B54;--tip:#A88466"></div>
-        <div class="strand" style="--r:-30deg;--root:#8A6B54;--c:#A88466;--tip:#C29C77"></div>
-        <div class="strand" style="--r:-18deg;--root:#9C7A5C;--c:#B8894E;--tip:#D3AE7A"></div>
-        <div class="strand" style="--r:-6deg;--root:#A88466;--c:#CFA770;--tip:#E3C796"></div>
-        <div class="strand" style="--r:6deg;--root:#B8976E;--c:#DCC08F;--tip:#EBD7B0"></div>
-        <div class="strand" style="--r:18deg;--root:#C2A47E;--c:#E5D2AE;--tip:#F1E5CC"></div>
-        <div class="strand" style="--r:30deg;--root:#C8B49A;--c:#EDE2CC;--tip:#F7F1E4"></div>
-        <div class="strand" style="--r:42deg;--root:#BFB6A8;--c:#E6E2DA;--tip:#F6F4EF"></div>
-        <div class="pin"></div>
-      </div>
-    </section>
-  </div>
+      <figure><img src="img/fale.jpg" alt="Długie, falowane włosy w ciepłym odcieniu blond" loading="lazy"><figcaption>Ciepły blond na długich włosach</figcaption></figure>
+      <figure><img src="img/platyna.jpg" alt="Proste włosy w chłodnym, perłowym odcieniu blond na tle ceglanej ściany salonu" loading="lazy"><figcaption>Chłodny, perłowy odcień</figcaption></figure>
+    </div>
+  </section>
 
-  <section aria-labelledby="s-h">
-    <div class="wrap split">
-      <h2 id="s-h">Usługi</h2>
+  <section class="svc" aria-labelledby="s-h">
+    <div class="wrap">
       <div>
-        <ul class="services">
-          <li><h3>Rozjaśnianie i blond</h3><p>Od subtelnego rozświetlenia po chłodną platynę. Dobieramy odcień do karnacji i stanu włosów.</p></li>
-          <li><h3>Koloryzacja</h3><p>Odświeżenie koloru, zmiana odcienia, pokrycie siwych włosów.</p></li>
-          <li><h3>Keratynowe prostowanie</h3><p>Gładkie, lśniące włosy, które łatwiej ułożyć na co dzień.</p></li>
-          <li><h3>Regeneracja włosów</h3><p>Zabiegi dla włosów zniszczonych rozjaśnianiem, prostownicą albo wcześniejszymi farbami.</p></li>
-          <li><h3>Strzyżenie i stylizacja</h3><p>Damskie strzyżenie, modelowanie, upięcia.</p></li>
-          <li><h3>Kosmetyki do domu</h3><p>Profesjonalne produkty do pielęgnacji, dobrane po wizycie.</p></li>
+        <h2 id="s-h" class="serif">W salonie</h2>
+        <ul>
+          <li>Rozjaśnianie i blondy</li>
+          <li>Koloryzacja</li>
+          <li>Keratynowe prostowanie</li>
+          <li>Regeneracja włosów</li>
+          <li>Strzyżenie i stylizacja</li>
+          <li>Kosmetyki do pielęgnacji w domu</li>
         </ul>
         <p class="note">Cenę podajemy po krótkiej konsultacji, bo zależy od długości i kondycji włosów.</p>
       </div>
+      <blockquote>
+        <p>„Chodzę tutaj już od 8 lat i nie wyobrażam sobie oddać swoich włosów w inne ręce.”</p>
+        <footer>Martyna, opinia w Google</footer>
+        <p class="stars"><b>4,9</b> ze 147 opinii w Google</p>
+      </blockquote>
     </div>
   </section>
 
-  <section class="story" aria-labelledby="o-h">
-    <div class="wrap split">
-      <div class="hex"><b>4,9</b><span>147 opinii w Google</span></div>
-      <div>
-        <h2 id="o-h" class="sr" style="position:absolute;left:-9999px">Opinie klientek</h2>
-        <blockquote>
-          <p>„Chodzę tutaj już od 8 lat i nie wyobrażam sobie oddać swoich włosów w inne ręce.”</p>
-          <footer>Martyna, opinia w Google</footer>
-        </blockquote>
-        <blockquote style="margin-top:2.5rem">
-          <p style="font-size:clamp(1.3rem,2.2vw,1.7rem)">„Umówiłam się na wizytę na rozjaśnianie włosów. Od tej pory jestem stałą klientką i odwiedzam to miejsce co miesiąc.”</p>
-          <footer>Klientka, opinia w Google</footer>
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <section aria-labelledby="v-h">
+  <section class="visit" aria-label="Kontakt">
     <div class="wrap">
-      <h2 id="v-h" style="margin-bottom:2.5rem">Gdzie nas znaleźć</h2>
-      <div class="visit">
-        <div><h3>Adres</h3><p>Krakowska 25<br>47-100 Strzelce Opolskie</p><p style="margin-top:.6rem;font-size:1rem"><a href="https://www.google.com/maps/dir/?api=1&destination=Magic+Style+Krakowska+Strzelce+Opolskie">Wyznacz trasę</a></p></div>
-        <div><h3>Telefon</h3><p><a href="tel:+48575405169">575 405 169</a></p></div>
-        <div><h3>Rezerwacje</h3><p><a href="https://www.facebook.com/magicstylestrzelceop">Przez Facebooka</a> albo telefonicznie</p></div>
-      </div>
-      <div class="final">
-        <p>Nie wiesz, jaki kolor wybrać? Zacznijmy od rozmowy.</p>
-        <a class="btn" href="https://www.facebook.com/magicstylestrzelceop">Zarezerwuj wizytę</a>
+      <p class="addr">Krakowska 25<br>Strzelce Opolskie</p>
+      <div class="links">
+        <a href="tel:+48575405169">575 405 169</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Magic+Style+Krakowska+Strzelce+Opolskie">Jak dojechać</a>
+        <a class="book" href="https://www.facebook.com/magicstylestrzelceop" style="border:0">Zarezerwuj wizytę</a>
       </div>
     </div>
   </section>
 </main>
-
-<footer>
-  <div class="wrap"><span>Magic Style, Strzelce Opolskie</span><span>Projekt poglądowy przygotowany przez Jerry Willow. Zdjęcia salonu dodamy po akceptacji.</span></div>
-</footer>
+<footer class="site"><div class="wrap"><span>Magic Style, Strzelce Opolskie</span><span>Projekt poglądowy od Jerry Willow. Zdjęcia pochodzą z fanpage'a salonu.</span></div></footer>
+<script>try{const b=document.getElementById('ba'),r=b.querySelector('input');const s=()=>b.style.setProperty('--pos',r.value+'%');r.addEventListener('input',s);s();}catch(e){}</script>
 </body>
 </html>
