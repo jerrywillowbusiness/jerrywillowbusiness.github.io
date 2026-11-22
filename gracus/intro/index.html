@@ -17,6 +17,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#121416">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<script>
+(function(){try{var f=/[?&]intro\b/.test(location.search),seen=sessionStorage.getItem('gracus-intro')==='1',rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+if(f||(!seen&&!rm))document.documentElement.classList.add('intro-on')}catch(e){}})();
+</script>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="preload" as="image" href="wynajem/img/corvette-drzwi.webp" type="image/webp">
 <link rel="preload" as="image" href="img/apartamenty.webp" type="image/webp">
@@ -103,60 +107,38 @@ a{color:inherit}
   .foot{position:static;text-align:center;padding:1.25rem}
 }
 
-/* ===== INTRO ===== */
-.intro{position:fixed;inset:0;z-index:50;background:#ECEAE6;perspective:1600px;overflow:hidden;contain:strict}
+/* ===== INTRO v3: nazwy firm obracają się w podpisy banerów ===== */
 .intro-on body{overflow:hidden}
-.shard{position:absolute;pointer-events:none;will-change:transform;backface-visibility:hidden}
-.shard>.g,.shard>.b{position:absolute;inset:0;will-change:clip-path,opacity}
-.shard>.g{-webkit-mask:url(intro/g.svg) no-repeat;mask:url(intro/g.svg) no-repeat;opacity:0}
-.s-apt>.g{background:#1E4232}.s-car>.g{background:#B3121B}.s-anti>.g{background:#0B0B0B}
-.shard>.b{opacity:0;overflow:hidden}
-.b .frame{position:absolute;overflow:hidden;will-change:transform}
-.b img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.75) brightness(.78);will-change:transform}
-.b .tint{position:absolute;inset:0}
-.b .col{position:absolute;inset:0}
-.s-apt .tint{background:linear-gradient(to top,rgba(23,51,38,.92) 0%,rgba(23,51,38,.35) 45%,rgba(23,51,38,.15) 100%)}
-.s-car .tint{background:linear-gradient(to top,rgba(70,6,10,.9) 0%,rgba(70,6,10,.3) 45%,rgba(0,0,0,.1) 100%)}
-.s-anti .frame{background:#000}
-.s-apt .col{background:#1E4232}.s-car .col{background:#B3121B}.s-anti .col{background:#0B0B0B}
-
-/* callouts */
-.co{position:absolute;opacity:0;white-space:nowrap;color:#121416;font:600 .98rem/1 "Manrope",system-ui,sans-serif;will-change:transform,opacity}
-.co i{position:absolute;display:block;background:#121416;will-change:transform}
-.co b{position:absolute;width:9px;height:9px;border:1.5px solid #121416;border-radius:50%;background:#ECEAE6}
-.co span{position:absolute;display:block}
-.cols .co i{left:0;top:0;width:1.5px;height:44px;transform-origin:top;transform:scaleY(0)}
-.cols .co b{left:-4px;top:-9px}
-.cols .co span{left:0;top:56px;transform:translateX(-50%)}
-.rows .co i{left:0;top:0;height:1.5px;width:44px;transform-origin:left;transform:scaleX(0)}
-.rows .co b{left:-9px;top:-4px}
-.rows .co span{left:56px;top:0;transform:translateY(-50%)}
-
-.wordmark{position:absolute;left:0;right:0;text-align:center;color:#121416;font:700 clamp(1rem,2vw,1.3rem)/1 "Manrope",system-ui,sans-serif;opacity:0;will-change:transform,opacity}
-.skip{position:absolute;right:clamp(1rem,3vw,2rem);bottom:clamp(1rem,3vw,1.75rem);z-index:2;font:600 .88rem/1 "Manrope",system-ui,sans-serif;color:#121416;background:transparent;border:1.5px solid rgba(18,20,22,.3);border-radius:999px;padding:.6rem 1rem;cursor:pointer;transition:border-color .2s,opacity .3s}
-.skip:hover{border-color:#121416}
-.intro.out .skip{opacity:0}
-.intro-done .v{animation:vIn .7s cubic-bezier(.16,1,.3,1) both}
-@keyframes vIn{from{opacity:0;transform:translateX(-50%) rotate(180deg) translateY(-16px)}}
-.intro-done .top{animation:fIn .6s ease both}
-@keyframes fIn{from{opacity:0}}
-.replay{position:fixed;left:clamp(1.25rem,3vw,2.5rem);bottom:1rem;z-index:6;font:600 .8rem/1 "Manrope",system-ui,sans-serif;color:rgba(255,255,255,.75);background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.5rem .8rem;cursor:pointer}
+.intro-on .panel{clip-path:inset(100% 0 0 0)}
+.intro-on .v{opacity:0;transition:none}
+.intro-on .top,.intro-on .foot,.intro-on .replay{opacity:0}
+.snap .v{transition:none!important}
+.top,.foot{transition:opacity .7s ease .1s}
+.intro{position:fixed;inset:0;z-index:50;pointer-events:none;contain:layout paint;background:var(--bg)}
+.stack{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(.1rem,1.2vh,.9rem)}
+.w{display:block;position:relative;color:#fff;white-space:nowrap;line-height:1;font-size:min(9vw,16vh);will-change:transform,clip-path}
+.w.apt{font-family:"Fraunces",Georgia,serif;font-weight:400;font-style:italic}
+.w.car{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.w.anti{font-family:"Archivo",sans-serif;font-weight:800;font-stretch:125%;font-size:min(7.4vw,13vh)}
+.bar{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.14)}
+.bar i{position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left}
+.skip{position:absolute;right:clamp(1rem,3vw,2rem);bottom:clamp(1.1rem,3vw,1.75rem);pointer-events:auto;font:600 .88rem/1 "Manrope",system-ui,sans-serif;color:rgba(255,255,255,.7);background:transparent;border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:.6rem 1rem;cursor:pointer;transition:color .2s,border-color .2s}
+.skip:hover{color:#fff;border-color:#fff}
+.replay{position:fixed;left:clamp(1.25rem,3vw,2.5rem);bottom:1rem;z-index:6;font:600 .8rem/1 "Manrope",system-ui,sans-serif;color:rgba(255,255,255,.75);background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.55rem .9rem;cursor:pointer;transition:opacity .7s ease .1s,color .2s}
 .replay:hover{color:#fff}
-@media (hover:none),(max-width:820px){.replay{position:absolute;top:4.2rem;bottom:auto}}
-
+@media (hover:none),(max-width:820px){.replay{position:absolute;top:4.2rem;bottom:auto}.w{font-size:min(15vw,11vh)}.w.anti{font-size:min(11.6vw,9vh)}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
 <div class="intro" id="intro" aria-hidden="true">
-  <div class="shard s-apt"><div class="g"></div><div class="b"><div class="frame"><img src="img/apartamenty.webp" alt="" style="object-position:50% 50%"><div class="tint"></div><div class="col"></div></div></div></div>
-  <div class="shard s-car"><div class="g"></div><div class="b"><div class="frame"><img src="wynajem/img/corvette-drzwi.webp" alt="" style="object-position:60% 72%"><div class="tint"></div><div class="col"></div></div></div></div>
-  <div class="shard s-anti"><div class="g"></div><div class="b"><div class="frame"><div class="col"></div></div></div></div>
-  <div class="co"><i></i><b></b><span>Apartamenty</span></div>
-  <div class="co"><i></i><b></b><span>Wynajem aut</span></div>
-  <div class="co"><i></i><b></b><span>Antykorozja</span></div>
-  <div class="wordmark">Firmy Gracusia</div>
+  <div class="stack">
+    <span class="w apt" data-t=".p-apt">Apartamenty</span>
+    <span class="w car" data-t=".p-car">Wynajem aut</span>
+    <span class="w anti" data-t=".p-anti">Antykorozja</span>
+  </div>
+  <div class="bar"><i></i></div>
   <button class="skip" type="button">Pomiń intro</button>
 </div>
 <button class="replay" type="button" onclick="location.href='intro/?intro'">Powtórz intro</button>
@@ -206,80 +188,70 @@ a{color:inherit}
 <script>
 (function(){
   const root=document.documentElement, intro=document.getElementById('intro');
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const force=new URLSearchParams(location.search).has('intro');
-  let seen=false; try{seen=sessionStorage.getItem('gracus-intro')==='1'}catch(e){}
-  const done=()=>{root.classList.remove('intro-on');root.classList.add('intro-done');intro.remove()};
-  if(reduce||(seen&&!force)){done();return}
+  const done=()=>{
+    root.classList.add('snap');root.classList.remove('intro-on');
+    intro&&intro.remove();
+    requestAnimationFrame(()=>requestAnimationFrame(()=>root.classList.remove('snap')));
+  };
+  if(!root.classList.contains('intro-on')){intro&&intro.remove();return}
   try{sessionStorage.setItem('gracus-intro','1')}catch(e){}
-  root.classList.add('intro-on');
 
-  const rows=matchMedia('(hover:none),(max-width:820px)').matches;
-  intro.classList.add(rows?'rows':'cols');
-  const shards=[...intro.querySelectorAll('.shard')], cos=[...intro.querySelectorAll('.co')];
-  const word=intro.querySelector('.wordmark');
-  const panels=[...document.querySelectorAll('.panel')];
-  const W=innerWidth,H=innerHeight;
-  const S=Math.round(Math.max(190,Math.min(380,Math.min(W,H)*(rows?.5:.42))));
-  const x0=(W-S)/2, y0=(H-S)/2-(rows?34:20), t3=S/3;
-  const EXPO='cubic-bezier(.16,1,.3,1)', INOUT='cubic-bezier(.76,0,.24,1)', OUT='cubic-bezier(.33,1,.68,1)';
-  const shiftX=rows?-Math.min(90,Math.max(0,x0+S+178-W)):0;
-  const d=S*.36;
-
-  const P=shards.map((el,i)=>{
-    const r=panels[i].getBoundingClientRect();
-    const LW=W, LH=Math.max(H,Math.ceil(r.bottom));
-    Object.assign(el.style,{left:'0px',top:'0px',width:LW+'px',height:LH+'px'});
-    const sx=rows?x0:x0+i*t3, sy=rows?y0+i*t3:y0, sw=rows?S:t3, sh=rows?t3:S;
-    const ins=(x,y,w,h)=>`inset(${y}px ${LW-x-w}px ${LH-y-h}px ${x}px)`;
-    const inset=ins(sx,sy,sw,sh), full=ins(r.left,r.top,r.width,r.height), dot=ins(sx+sw/2,sy+sh/2,0,0);
-    const g=el.querySelector('.g');
-    g.style.cssText+=`;-webkit-mask-size:${S}px ${S}px;mask-size:${S}px ${S}px;-webkit-mask-position:${x0}px ${y0}px;mask-position:${x0}px ${y0}px;clip-path:${inset}`;
-    const fr=el.querySelector('.frame');
-    Object.assign(fr.style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});
-    const k=Math.max(sw/r.width,sh/r.height)*1.02;
-    const frStart=`translate3d(${sx+sw/2-(r.left+r.width/2)}px,${sy+sh/2-(r.top+r.height/2)}px,0) scale(${k})`;
-    el.style.transformOrigin=`${sx+sw/2}px ${sy+sh/2}px`;
-    const burst=rows
-      ?[`translate3d(${shiftX-S*.03}px,${-d}px,0) rotateX(-10deg) rotate(-2.5deg)`,`translate3d(${shiftX}px,0,0) scale(1.03)`,`translate3d(${shiftX-S*.03}px,${d}px,0) rotateX(10deg) rotate(2.5deg)`][i]
-      :[`translate3d(${-d}px,${S*.025}px,0) rotateY(12deg) rotate(-3.5deg)`,`translate3d(0,${-S*.05}px,0) scale(1.03)`,`translate3d(${d}px,${-S*.025}px,0) rotateY(-12deg) rotate(3.5deg)`][i];
-    const enter=rows?`translate3d(${(i-1)*-30}px,0,0)`:`translate3d(0,${(i-1)*36}px,0)`;
-    const co=cos[i];
-    if(rows){co.style.left=(x0+S+16+shiftX-S*(i===1?0:.03))+'px';co.style.top=(y0+i*t3+t3/2+(i-1)*d)+'px'}
-    else{co.style.left=(x0+i*t3+t3/2+(i-1)*d)+'px';co.style.top=(y0+S+18+(i===1?-S*.05:(i-1)*-S*.025))+'px'}
-    return {el,g,fr,frStart,dot,b:el.querySelector('.b'),img:el.querySelector('.b img'),col:el.querySelector('.col'),inset,full,burst,enter};
-  });
-  word.style.top=(y0+S+30)+'px';
-
+  const narrow=matchMedia('(hover:none),(max-width:820px)').matches;
+  const words=[...intro.querySelectorAll('.w')], panels=[...document.querySelectorAll('.panel')];
+  const bar=intro.querySelector('.bar i');
   const anims=[];
-  const A=(el,kf,o)=>{if(!el)return;const a=el.animate(kf,Object.assign({fill:'forwards'},o));anims.push(a);return a};
-  // one continuous timeline (ms); first segment of each property fills backwards, later ones only forwards
-  P.forEach((p,i)=>{
-    A(p.g,[{opacity:0},{opacity:1}],{duration:500,delay:i*70,easing:OUT,fill:'both'});
-    A(p.el,[{transform:p.enter},{transform:'none'}],{duration:760,delay:i*70,easing:EXPO,fill:'both'});
-    A(p.el,[{transform:'none'},{transform:p.burst}],{duration:820,delay:880,easing:EXPO});
-    A(p.el,[{transform:p.burst},{transform:'none'}],{duration:1000,delay:1880+i*45,easing:INOUT});
-    // the strip fills into a bar of its colour, then opens up to the full banner
-    A(p.b,[{opacity:1},{opacity:1}],{duration:1,delay:1800});
-    A(p.b,[{clipPath:p.dot},{clipPath:p.inset,offset:.28},{clipPath:p.full}],{duration:1050,delay:1780+i*45,easing:'cubic-bezier(.65,0,.25,1)',fill:'both'});
-    A(p.g,[{opacity:1},{opacity:0}],{duration:140,delay:2060+i*45});
-    A(p.col,[{opacity:1},{opacity:0}],{duration:700,delay:2080+i*45,easing:OUT});
-    A(p.fr,[{transform:p.frStart},{transform:p.frStart,offset:.28},{transform:'none'}],{duration:1050,delay:1780+i*45,easing:'cubic-bezier(.65,0,.25,1)',fill:'both'});
-    A(p.img,[{transform:'scale(1.14)'},{transform:'scale(1.04)'}],{duration:1200,delay:1820,easing:EXPO});
-  });
-  A(word,[{opacity:0,transform:'translate3d(0,10px,0)'},{opacity:1,transform:'none'}],{duration:600,delay:420,easing:EXPO,fill:'both'});
-  A(word,[{opacity:1},{opacity:0}],{duration:260,delay:880,easing:OUT});
-  cos.forEach((c,i)=>{
-    const line=c.querySelector('i'), lab=c.querySelector('span');
-    A(c,[{opacity:0},{opacity:1}],{duration:200,delay:1150+i*70});
-    A(line,[{transform:rows?'scaleX(0)':'scaleY(0)'},{transform:rows?'scaleX(1)':'scaleY(1)'}],{duration:480,delay:1150+i*70,easing:EXPO});
-    A(lab,[{opacity:0,translate:rows?'8px 0':'0 8px'},{opacity:1,translate:'0 0'}],{duration:520,delay:1260+i*70,easing:EXPO});
-    A(c,[{opacity:1},{opacity:0}],{duration:220,delay:1700,easing:OUT});
-  });
-  const end=A(intro,[{background:'#ECEAE6'},{background:'#ECEAE6'}],{duration:2980});
-  end.finished.then(()=>{intro.classList.add('out');intro.animate([{opacity:1},{opacity:0}],{duration:180,fill:'forwards'}).finished.then(done)});
-  intro.querySelector('.skip').onclick=()=>{anims.forEach(a=>a.pause());intro.animate([{opacity:1},{opacity:0}],{duration:220,fill:'forwards'}).finished.then(()=>{anims.forEach(a=>a.cancel());done()})};
+  const A=(el,kf,o)=>{const a=el.animate(kf,Object.assign({fill:'both'},o));anims.push(a);return a};
+  const OUT='cubic-bezier(.16,1,.3,1)', INOUT='cubic-bezier(.76,0,.24,1)';
+
+  const start=()=>{
+    /* 1. nazwy wjeżdżają z maski, jedna po drugiej */
+    words.forEach((w,i)=>A(w,[
+      {clipPath:'inset(115% -.1em -.3em -.1em)',transform:'translateY(.28em)'},
+      {clipPath:'inset(-.3em -.1em -.3em -.1em)',transform:'translateY(0)'}
+    ],{duration:950,delay:80+i*110,easing:OUT}));
+    A(bar,[{transform:'scaleX(0)'},{transform:'scaleX(1)'}],{duration:1500,easing:'cubic-bezier(.45,0,.2,1)'});
+
+    /* 2. nazwy obracają się o 90° i lądują jako podpisy banerów */
+    const T0=1550;
+    words.forEach((w,i)=>{
+      const t=document.querySelector(w.dataset.t+' .v');
+      const wr=w.getBoundingClientRect();
+      if(narrow||!t){
+        A(w,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(-.35em)'}],{duration:520,delay:T0+i*60,easing:'ease-in'});
+        return;
+      }
+      const tr=t.getBoundingClientRect();
+      const fs=parseFloat(getComputedStyle(t).fontSize)/parseFloat(getComputedStyle(w).fontSize);
+      const dx=(tr.left+tr.width/2)-(wr.left+wr.width/2), dy=(tr.top+tr.height/2)-(wr.top+wr.height/2);
+      A(w,[
+        {transform:'translate(0,0) rotate(0deg) scale(1)'},
+        {transform:`translate(${dx}px,${dy}px) rotate(-90deg) scale(${fs})`}
+      ],{duration:1150,delay:T0+i*70,easing:INOUT});
+    });
+
+    /* 3. kurtyna: banery wyrastają od dołu, zdjęcia „oddychają” */
+    panels.forEach((p,i)=>{
+      A(p,[{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)'}],{duration:1100,delay:T0+60+i*100,easing:INOUT});
+      const img=p.querySelector('.bg img');
+      if(img)A(img,[{transform:'scale(1.32)'},{transform:'scale(1.04)'}],{duration:1700,delay:T0+60+i*100,easing:OUT});
+    });
+    /* tło intra znika razem z kurtyną */
+    A(intro,[{backgroundColor:'rgb(18,20,22)'},{backgroundColor:'rgba(18,20,22,0)'}],{duration:1,delay:T0});
+    A(bar,[{opacity:1},{opacity:0}],{duration:300,delay:T0-200});
+
+    const end=Math.max(...anims.map(a=>a.effect.getComputedTiming().endTime));
+    Promise.all(anims.map(a=>a.finished)).then(finish).catch(()=>{});
+  };
+  const finish=()=>{anims.forEach(a=>a.cancel());done()};
+
+  intro.querySelector('.skip').onclick=()=>{
+    anims.forEach(a=>{try{a.finish()}catch(e){}});finish();
+  };
   addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('intro'))intro.querySelector('.skip').click()});
+
+  /* czekamy na fonty i zdjęcia, żeby nic nie „wskakiwało” w trakcie */
+  const imgs=[...document.querySelectorAll('.panel .bg img')].map(i=>i.decode?i.decode().catch(()=>{}):0);
+  Promise.race([Promise.all([document.fonts.ready,...imgs]),new Promise(r=>setTimeout(r,1500))]).then(start);
 })();
 </script>
 </body>
